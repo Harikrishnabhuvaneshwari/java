@@ -1,0 +1,10 @@
+#ignore target, test, .settings => folders
+target
+test
+.settings
+
+#ignore .jar, .classpath, .project => file
+*.jar
+.classpath
+.project
+

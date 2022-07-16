@@ -1,0 +1,15 @@
+{
+   "query":"budget.mutation.add_budget_query",
+   "tag":"budget",
+   "variables":{
+      "add_data":{
+         "budget_name":"Budget one",
+         "description":"Budget one",
+         "linked_awards":"",
+         "is_company_budget":0,
+         "start_date":"",
+         "end_date":"",
+         "is_date_validity":0
+      }
+   }
+}
