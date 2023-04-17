@@ -1,4 +1,4 @@
-package com.java.threads;
+package com.java.threads.threadlocal;
 
 import java.util.concurrent.TimeUnit;
 
