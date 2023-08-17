@@ -32,7 +32,7 @@ public class MyHttpHandler implements HttpHandler {
         return httpExchange
                 .getRequestURI()
                 .toString()
-                .split("\\?")[1]
+                .split("/")[1]
                 .split("=")[1];
 
     }

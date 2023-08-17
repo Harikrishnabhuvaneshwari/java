@@ -8,6 +8,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 public class HTTPServer {
+
+    // test url - http://localhost:8088/test?name=hari
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 8088), 0);
         server.createContext("/test", new  MyHttpHandler());
