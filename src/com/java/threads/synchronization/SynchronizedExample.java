@@ -18,7 +18,7 @@ public class SynchronizedExample {
         IntStream.range(0, 1000).forEach(i -> {
             executorService.submit(SynchronizedExample::synchronizedIncrement);
         });
-        Thread.sleep(10_000);
+        Thread.sleep(5_000);
 
         System.out.println("Non Synchronized : " + counter1);
         System.out.println("Synchronized : " + counter2);

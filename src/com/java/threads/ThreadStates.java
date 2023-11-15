@@ -13,13 +13,13 @@ A thread state. A thread can be in one of the following states:
         A thread that is blocked waiting for a monitor lock is in this state.
 
         WAITING
-        A thread that is waiting indefinitely for another thread to perform a particular action is in this state.
+        A thread that is waiting indefinitely(by calling wait/join methods without timeout) is in this state.
 
         TIMED_WAITING
-        A thread that is waiting for another thread to perform an action for up to a specified waiting time is in this state.
+        A thread that is waiting for a specified amount of time is in this state.
 
         TERMINATED
-        A thread that has exited is in this state.
+        A thread that has completed/exited is in this state.
 
 Note :
 A thread can be in only one state at a given point in time.

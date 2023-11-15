@@ -11,14 +11,14 @@ public class SemaphoresUsage {
     public static void main(String[] args) {
         // Controls the access to the shared resource by permitting limited access.
         Semaphore semaphore = new Semaphore(5);
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        ExecutorService executorService = Executors.newFixedThreadPool(100);
 
         Runnable task = () -> {
             try {
                 boolean permitted = semaphore.tryAcquire(1, TimeUnit.SECONDS);
                 if (permitted) {
                     System.out.println("Semaphore acquired");
-                    Thread.sleep(2_000);
+                    Thread.sleep(50);
                     semaphore.release();
                 } else {
                     System.out.println("Could not acquire Semaphore");
@@ -28,7 +28,7 @@ public class SemaphoresUsage {
             }
         };
 
-        IntStream.of(10).forEach(i -> executorService.submit(task));
+        IntStream.rangeClosed(0,200).forEach(i -> executorService.submit(task));
 
         //Output:
         /*
@@ -44,7 +44,7 @@ public class SemaphoresUsage {
         Could not acquire Semaphore
          */
 
-        executorService.close();
+        //executorService.close();
     }
 
 }
